@@ -3,25 +3,80 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
         <title>Trip Checklist</title>
     </head>
     <body>
         <h1>Trip checklist</h1>
-        <ol>
-            <li>Car</li>
+        
+        <div class="d-flex flex-row bd-highlight">
+            <div class="p-2 flex-fill bd-highlight border border-success">
+                <h1 class="display-5">General</h1>
                 <ol>
-                    <li>Car rental</li>
-                    <li>Mobile charger</li>
-                    <li>EZ pass</li>
-                    <li>Quarters for toll if Needed</li>
-                    <li>Water cans if needed</li>
+                    <li>Car</li>
+                        <ol>
+                            <li>Car rental</li>
+                            <li>Mobile charger</li>
+                            <li>EZ pass</li>
+                            <li>Quarters for toll if Needed</li>
+                            <li>Water cans if needed</li>
+                        </ol>
+                    <li>Hotal booking</li>
+                    <ol>
+                        <li>Parking Fee?</li>
+                        <li>Breakfast included?</li>
+                        <li>Nearby to destination?</li>
+                        <li>Ask if any shuttle avaialble to destination?</li>
+                        <li>Confirm whether you need a rental car?</li>
+                    </ol>
+
+                    <li>Remainder</li>
+                    <ol>
+                        <li>Selfie Stick(If needed)</li>
+                        <li>Office laptop/charger(If needed)</li>
+                        <li>Garage opener</li>
+                        <li>House key</li>
+                    </ol>
                 </ol>
-            <li>Hotal booking</li>
-            <ol>
-                <li>Parking Fee?</li>
-                <li>Breakfast included?</li>
-                <li>Near by to destination?</li>
-            </ol>
-        </ol>    
+            </div>
+            <div class="p-2 flex-fill bd-highlight border border-primary">
+                <h1 class="display-5">Checklist - Guy</h1>
+                <ol>
+                    <li>Wallet</li>
+                    <li>Belt</li>
+                    <li>Hair cream</li>
+                    <li>Sun glass</li>
+                    <li>Extra Shoe/Chappel/Sandal(Depends on the destination)</li>
+                    <li>Shorts</li>
+                    <li>Under wear</li>
+                    <li>T-shirts</li>
+                    <li>Jeans</li>
+                    <li>Socks</li>
+                    <li>Winter</li>
+                    <ol>
+                        <li>Winter jacket/Coats</li>    
+                        <li>Gloves</li>
+                        <li>Scarves</li>
+                    </ol>
+                    <li>Summer</li>
+                    <ol>
+                        <li>Sun screen</li>    
+                        <li>Hat</li>                    
+                    </ol>
+                    
+                    <li>Mobile Phone</li>
+                    <li>Swim suit</li>
+                    <li>Umbrella</li>
+                    <li>Laundry bag</li>
+                </ol>
+            </div>
+            <div class="p-2 flex-fill bd-highlight border border-danger">
+                <h1 class="display-5">Checklist - Girl</h1>
+            </div>
+        </div>           
     </body>
 </html>
