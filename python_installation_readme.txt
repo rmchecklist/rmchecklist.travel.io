@@ -21,5 +21,17 @@
                     e.g. numpy.random.rand(2) ==> array([ 0.64988124, -0.09935966])
           Randon integers ==> numpy.randon.randint(start(inclusive), end(exclusive), numberofitems(optional))
                     e.g. numpy.random.randint(1, 10) ==> 8
+                         numpy.random.randint(1, 10, 10) ==> array([3, 1, 8, 1, 5, 1, 2, 4, 9, 7])
+          Reshape the array ==> reshape the current current array to nD array
+                    e.g. na = numpy.arange(0,10) ==> array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+                         na.reshape(2, 5) ==> array([[0, 1, 2, 3, 4],
+                                                   [5, 6, 7, 8, 9]])
+                    
+          shape ==> return the current length of the N dimentional array
+                    e.g. numpy.shape(a ==>(1 to 25)) ==> (25, )
+                    e.g. numpy.reshape(5,2).shape ==> (5,2)
+          find the data type ==> arr = numpy.array([1,2,3,4])
+                    e.g. arr.dtype ==> dtype('int32')
+          numpy find max value ==> an = numpy.random.randint(1,10,10) ==> an.max()
                                         
                     
