@@ -57,6 +57,53 @@
                          
                          arr.max() or numpy.max(arr), both are same, arr.max() internally calls numpy.max(arr)
                          
+                         numpy.sin(arr)
+                         
+                         numpy.log(arr)
+                         
+                ***********************Numpy indexing***************************
+                
+                Bracket indexing works same as python array indexing.
+                
+                arr[0] , arr[0:], arr[:2], arr[1:2]
+                
+                broadcasting ==> assing the value by slicing 
+                  
+                           e.g. array = numpy.arange(0,11) ==> array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+                                array[0:5] = 100 ==> array([100, 100, 100, 100, 100,   5,   6,   7,   8,   9,  10])
+                                
+                                array[:] = 99 ==> set all array values to 99
+                                
+                           e.g. array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10])
+                                    
+                                    slice_of_array = array[0:6] ==> array([0, 1, 2, 3, 4, 5])
+                                    slice_of_array[:] = 99 ==> array([99, 99, 99, 99, 99, 99])
+                                    
+                                    it also udpate the values of array ==> array([99, 99, 99, 99, 99, 99,  6,  7,  8,  9, 10])
+                  Array copy ==> arr_copy = array.copy() ==> this will copy the array rather than using the reference copy, 
+                  so change of this array won't affect array which we copied from
+                  
+                  e.g. array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10]) 
+                       array_copy = array.copy()
+                       array_copy[:] = 100 ==> array([100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100])
+                       array ==> array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10]) 
+                       
+              Matrix or 2D array value can be accessed by index of row and column indexes 
+              
+                  e.g. mat = numpy.array([[1,2,3], [4,5,6], [7,8,9]]) == > 
+                           array([[1, 2, 3],
+                                    [4, 5, 6],
+                                    [7, 8, 9]])
+                                    
+                         Value 1 ==> mat[0,0] or mat[0][0]
+                         
+                Slice the matric by mat[:2, 1:] ==> array([[2, 3],
+                                                               [5, 6]])
+                                                               
+                                                               
+                  
+                  
+                                
                          
            
           
