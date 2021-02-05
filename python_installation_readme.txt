@@ -5,6 +5,7 @@
 5. jupyter notebook
 
 6. Numpy ==> import numpy as np - This can convert the regular list object into numpy array
+          *****************************numpy array******************************************
           numpy.array() ==> converts list to array
           numpy.arange(0,5) ==> creates a numpy array from range 
           numpy.zeros(row) ==> creates 1D array with floating type zeros
@@ -33,5 +34,33 @@
           find the data type ==> arr = numpy.array([1,2,3,4])
                     e.g. arr.dtype ==> dtype('int32')
           numpy find max value ==> an = numpy.random.randint(1,10,10) ==> an.max()
+          find max number array index ==> an.argmax()
+          find min number and array index ==> an.min(), an.argmin()
+          ***************************************************************************************************
+          
+          *********************Numpy operation*************************
+          
+          Adding 2 arrays ==> arr1 + arr2 ==> sum the array of each indexes and return the result
+          
+                    e.g. an = np.arange(1,10) ==> array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+                         an + an ==> array([ 2,  4,  6,  8, 10, 12, 14, 16, 18])
+                         
+                         use add, subtraction, multiply, divide ==> if value 0/0 it return nan value and 1/0 return inf
+                         
+                         Additionally we can square and add value in to the exisitng array
+                         
+                         an**2, an+100
+                         
+                         square root ==> numpy.sqrt(arr)
+                         
+                         exponential ==> numpy.exp(arr)
+                         
+                         arr.max() or numpy.max(arr), both are same, arr.max() internally calls numpy.max(arr)
+                         
+                         
+           
+          
+                                        
+          
                                         
                     
