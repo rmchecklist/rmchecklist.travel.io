@@ -101,6 +101,12 @@
                                                                [5, 6]])
                                                                
                                                                
+                                                               
+Pandas(named after Panel data)
+
+         --Series
+                                                               
+                                                               
                   
                   
                                 
