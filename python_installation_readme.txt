@@ -113,6 +113,20 @@ Pandas(named after Panel data)
                            e.g. df = pandas.DataFrame(numpy.random.rand(5,4), ['A','B', 'C', 'D', 'E'], ['W', 'X','Y','Z'])
                   Adding a new column df['new] = df['X'] + df['Y']
                   
+                  Dropping a column or row
+                           e.g. df.drop('new', axis=1) axis = 0[default] represents x axis or row, 1 represents Y axis or col
+                           use inplace = True to replace permantly from date frame object ==> df.drop('new', axis=1, inplace=True)
+                           
+                           multi column series==> df[['W','X']]
+                           multi row series ==> df.loc['A']
+                           
+                           indexed localtion ==> df.iloc[2]
+                           
+                           Return subset by label ==> df.loc[['A','B'],['X','Y']]
+                           
+                           
+                  Conditional selection ==>  df[df >0]
+                  
                   
                   
          
