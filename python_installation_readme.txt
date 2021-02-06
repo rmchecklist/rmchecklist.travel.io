@@ -104,7 +104,18 @@
                                                                
 Pandas(named after Panel data)
 
-         --Series
+         Series ==> 
+                  converts array/list/dict into index values series
+                           e.g. pandas.Series(list/array/dict)
+                  
+         Data frames ==> 
+                  Form a table matric with rows and columns Names
+                           e.g. df = pandas.DataFrame(numpy.random.rand(5,4), ['A','B', 'C', 'D', 'E'], ['W', 'X','Y','Z'])
+                  Adding a new column df['new] = df['X'] + df['Y']
+                  
+                  
+                  
+         
                                                                
                                                                
                   
