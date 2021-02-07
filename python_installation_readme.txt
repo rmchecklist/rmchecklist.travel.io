@@ -125,7 +125,19 @@ Pandas(named after Panel data)
                            Return subset by label ==> df.loc[['A','B'],['X','Y']]
                            
                            
-                  Conditional selection ==>  df[df >0]
+                  Conditional selection ==>  df[df >0] , multiple condition ==> df[(df['W'] > 0)|(df['X'] > .05)]
+                  
+                  reset index ==> df.reset_index() ==> create new 0 based index and current index will be new column value
+                  
+                  Add new column  ==> df['state] = 'CA GA PA OH NY'.split()
+                  
+                  set new index ==> df.set_index('state')
+                  
+                  
+                  Drop missing value ==> df.dropna() ==> remove all nan values from dataframe
+                 
+                  
+                  
                   
                   
                   
