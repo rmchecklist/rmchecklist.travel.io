@@ -154,13 +154,90 @@ Pandas(named after Panel data)
                                                       FB	2.0	296.5	75.660426	243.0	269.75	296.5	323.25	350.0
                                                       GOOG	2.0	160.0	56.568542	120.0	140.00	160.0	180.00	200.0
                                                       MSFT	2.0	232.0	152.735065	124.0	178.00	232.0	286.00	340.0
+                                                      
+                                                      
+                                                      
+                                                      
+                  df.groupby('Company').describe().transpose()
                   
-                 
+                  e.g. 
+                           Company	FB	GOOG	MSFT
+                           Sales	count	2.000000	2.000000	2.000000 
+                           mean	296.500000	160.000000	232.000000
+                           std	75.660426	56.568542	152.735065
+                           min	243.000000	120.000000	124.000000
+                           25%	269.750000	140.000000	178.000000
+                           50%	296.500000	160.000000	232.000000
+                           75%	323.250000	180.000000	286.000000
+                           max	350.000000	200.000000	340.000000
+                           
+                           
+                  Data frame - Concat, merge and Join:
+                  ====================================
+                  
+                  concatenation ==> pd.concat([df1, df2, df3], axis=? ? represents row or col concatenation)
+                  
+                  pd.merge(left, right, how='innner', on="Key')
+                  
+                  left.join(right, how="inner/outer")
+                  
+                  Pandas common operators:
+                  ========================
+                  
+                  1. df.head() as same returning value df
+                  2. Unique value ==> df['col2'].unique()
+                  3. No of unique value ==> df['col2'].nunique()
+                  4. value occurance of the columns ==> df['col2'].value_counts()
+                  5. Conditional selection ==> 
+                           e.g. 
+                                    operation df[df['col2'] > 1]
+                                    df[(df['col1'] >2) & (df['col2'] == 666)]
+                  6. apply ==> broadcast the function to dataframe
+                           def times2(x):
+                                    return x*2
+                           
+                           df['col1'].apply(times2)
+                           
+                           lambda ==> df['col1'].apply(lambda x : x*2)
+                  
+                  
+                  7. Drop columns  ==> df.drop('col2', axis=1, inplace=True)
+                  
+                  8. Columns names => df.columns
+                  
+                  9. index values ==> df.index
+                  
+                  10. Sort the values ==> df.sort_values('col2')
+                  
+                  11. Check null values ==> df.isnull()
+                  
+                  12. Pivot table
+                           e.g. df.pivot_table(values='D', index=['A','B'], columns=['C'])
+                           
+                                                      A	B	C	D
+                                             0	foo	one	x	1
+                                             1	foo	one	y	3
+                                             2	foo	two	x	2
+                                             3	bar	two	y	5
+                                             4	bar	one	x	4
+                                             5	bar	one	y	1
+                                             Values --> Values needs to be grouped
+                                             index --> columns needs to be grouped
+                                             columns --> new pivot columns 
+                                             
+                                             Output:
+                                             
+                                             	C	x	y
+                                             A	B		
+                                             bar	one	4.0	1.0
+                                             two	NaN	5.0
+                                             foo	one	1.0	3.0
+                                             two	2.0	NaN
                   
                   
                   
                   
-                  
+                           
          
                                                                
                                                                
