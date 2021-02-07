@@ -143,7 +143,17 @@ Pandas(named after Panel data)
                   
                            e.g. df['B'].fillna(value=df['B'].mean())
                            
-                  Group by with pandas
+                  Group by with pandas:
+                  =====================
+                           df.groupby('Company') ==> you can call the aggregate function such as min, max, mean, std, avg
+                           
+                           e.g. df.groupby('Company').describe()
+                                    	Sales
+                                                      count	mean	std	min	25%	50%	75%	max
+                                                      Company								
+                                                      FB	2.0	296.5	75.660426	243.0	269.75	296.5	323.25	350.0
+                                                      GOOG	2.0	160.0	56.568542	120.0	140.00	160.0	180.00	200.0
+                                                      MSFT	2.0	232.0	152.735065	124.0	178.00	232.0	286.00	340.0
                   
                  
                   
