@@ -135,6 +135,16 @@ Pandas(named after Panel data)
                   
                   
                   Drop missing value ==> df.dropna() ==> remove all nan values from dataframe
+                  
+                           e.g. df.dropna(thresh=2) ==> return data frames of 2 non-nan values
+                           
+                           
+                  Fill missing value ==> df.fillna(value='any value')
+                  
+                           e.g. df['B'].fillna(value=df['B'].mean())
+                           
+                  Group by with pandas
+                  
                  
                   
                   
