@@ -240,6 +240,54 @@ Data input and output:
          3. Read excel file ==> df = pd.read_excel('Excel_Sample.xlsx', sheet_name="Sheet1")
          
          
+Example: 
+         Show the head of the dataframe  ==> data.head()
+         
+         What are the column names? ==> data.columns
+         
+         How many States (ST) are represented in this data set? ==> data['ST'].nunique()
+         
+         Get a list or array of all the states in the data set. ==> data['ST'].unique()
+         
+         What are the top 5 states with the most failed banks? ==>
+         
+         data.groupby('ST').count().sort_values('Bank Name', ascending=False).iloc[:5]['Bank Name']
+         
+          What are the top 5 acquiring institutions? ==> data['Acquiring Institution'].value_counts().iloc[:5]
+          
+          What is the most common city in California for a bank to fail in?
+          
+          data[data['ST'] == 'CA'].groupby('City').count().sort_values('Bank Name', ascending=False).head(1)
+          
+           How many failed banks don't have the word "Bank" in their name?
+           
+           sum(data['Bank Name'].apply(lambda name : 'Bank' not in name))
+           
+           How many bank names start with the letter 's' ? 
+           
+           sum(data['Bank Name'].apply(lambda name : 'S' == name[0]))
+           
+           How many CERT values are above 20000 ? 
+           
+           sum(data['CERT'].apply(lambda cert : cert > 20000))
+            or 
+            sum(data['CERT'] > 20000)
+           
+           How many bank names consist of just two words? (e.g. "First Bank" , "Bank Georgia" )
+           
+           sum(data['Bank Name'].apply(lambda name : len(name.split()) == 2))
+           
+           Data info ==> data.info()
+           
+           
+           
+           
+           
+         
+         
+         
+         
+         
                   
                   
                   
