@@ -333,6 +333,49 @@ Example:
          axes.set_title('Set title')
   
   
+Creating inner plot:
+--------------------
+fig =plt.figure()
+
+axes1 = fig.add_axes([.1,.1,.8,.8])
+
+axes2 = fig.add_axes([.2,.5,.3,.3])
+
+axes1.plot(x,y)
+axes2.plot(y,x)
+
+
+Subplots:
+
+fig, axes = plt.subplots(nrows=1, ncols =3)
+fig.tight_layout()
+
+
+Figure size and DPI
+-------------------
+Plot:
+
+fig = plt.figure(figsize=(3,2))
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x,y)
+
+Subplot:
+
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(3,2))
+
+axes[0].plot(x,y)
+
+Legend:(Differtiate between the graphs)
+
+fig = plt.figure()
+axes  = fig.add_axes([0,0,1,1])
+
+axes.plot(x, x**2, label='X sq')
+axes.plot(x, x**3, label='X cu')
+
+axes.legend()
+
+  
          
          
          
