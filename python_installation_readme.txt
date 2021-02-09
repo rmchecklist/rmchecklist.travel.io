@@ -294,6 +294,45 @@ Example:
            
            
            
+  Visualization in python: Matplotlib
+  
+  pip install matplotlib
+  
+  import matplotlib.plyplot as plt
+  
+  import numpy as np
+  
+  %matplotlib inline
+  x = np.linspace(0, 5, 11)
+  y = x**2
+
+  #Functioanl way to create a plot
+  -------------------------------
+  plt.plot(x, y)
+  
+         plt.subplot(1,2,1)
+         plt.plot(x,y,'r')
+         plt.subplot(1,2,2)
+         plt.plot(y,x,'b')
+         plt.plot(x, y, 'r-')
+         plt.xlabel('X Label')
+         plt.ylabel('Y Label')
+         plt.title('Titile')
+         plt.show() 
+         
+  
+  plt.show() -- if you are not using jupyter
+  
+  #OO way to create a plot
+  ------------------------
+         fig = plt.figure()
+         axes = fig.add_axes([0.1,0.1, 0.8, .8])
+         axes.plot(x,y)
+         axes.set_xlabel('X Label')
+         axes.set_ylabel('Y Label')
+         axes.set_title('Set title')
+  
+  
          
          
          
