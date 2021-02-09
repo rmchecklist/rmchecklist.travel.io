@@ -283,9 +283,13 @@ Example:
            How many banks closed in the year 2008? (this is hard because we technically haven't learned about time series with pandas yet! Feel free to skip this one!
            
            sum(data['Closing Date'].apply(lambda name : name.split('-')[2] == '08'))
+            or 
+            
+           sum(data['Closing Date'].apply(lambda name : name[-2:] == '08'))
            
+           or 
            
-           
+           sum(pd.to_datetime(data['Closing Date']).apply(lambda date : date.year == 2008))
            
            
            
