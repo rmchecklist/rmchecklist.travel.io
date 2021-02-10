@@ -375,14 +375,69 @@ axes.plot(x, x**3, label='X cu')
 
 axes.legend()
 
+
+axes.legend(loc=(.4,.7))
+
+Loc code will used to map the legends(Best - 0, 1,2 ...10) or else specify by tuple(.2,.2)
+
+Plot appearance:
+-----------------
+
+Colors:
+=======
+fig = plt.figure()
+axes = fig.add_axes([0,0,1,1])
+axes.plot(x,y, color='orange') ==> color can be RGB Hex code e.g. #3463FGCC
+
+Linewidth:
+==========
+
+axes.plot(x,y, color='orange', linewidth=5) ==> Graph line width, linewidth/lw ==> both will work.
+
+Line transparancy(alpha) ==> axes.plot(x,y, color='orange', lw=5, alpha=.5)
+
+Line stype ==> axes.plot(x,y, color='orange', lw=5, linestyle='dashed')
+
+Marker: 
+=======
+axes.plot(x,y, color='orange', lw=1, ls='-', marker='o')
+
+Makersize(makersize/ms)
+-----------------------
+axes.plot(x,y, color='orange', lw=1, ls='-', marker='+', ms=20)
+
+MarkerFace color and edg width:
+--------------------------------
+
+axes.plot(x,y, color='green', lw=1, ls='-', marker='o', ms=20,
+         markerfacecolor='yellow', markeredgewidth=3)
+
   
          
-         
+Display X and Y range on the plot
+
+axes.set_xlim([0,1])
+axes.set_ylim([0,1])
+
+It displays range plot from 0-1
          
          
          
                   
+Example:                  
                   
+fig, ax = plt.subplots(1,2)
+
+ax[0].set_xlim(0,100)
+ax[0].set_ylim(0,200)
+
+ax[1].set_ylim(0,10000)
+ax[1].set_xlim(0,100)
+
+ax[0].plot(x,y, color='blue', linestyle='dashed', lw=3)
+ax[1].plot(x,z, color='red', linestyle='-', lw=3)
+
+plt.tight_layout()
                   
                   
                            
