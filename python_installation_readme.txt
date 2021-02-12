@@ -439,8 +439,42 @@ ax[1].plot(x,z, color='red', linestyle='-', lw=3)
 
 plt.tight_layout()
                   
-                  
-                           
+Histogram:
+
+df['A].plot(kind='hist', bins=30)
+or
+df['A].hist(bins=30)
+or
+df['A'].plot.hist()
+
+df.plot.area()
+
+df2.plot.bar(stacked=True)
+
+df.plot.line(figsize=(12,3), lw =1)
+
+df.plot.scatter(x='A', y='B')
+
+df.plot.scatter(x='A', y='B', c = 'C', cmap='coolwarm')
+
+df.plot.scatter(x='A', y='B', s=df['C']*100)
+
+df.plot.box()
+
+df = pd.DataFrame(np.random.randn(1000, 2), columns=['a','b'])
+
+df.plot.hexbin(x='a', y='b')
+
+df.plot.hexbin(x='a', y='b', gridsize=25)
+
+df.plot.hexbin(x='a', y='b', gridsize=25, cmap='coolwarm')
+
+Kernal density estimation ==> df['a'].plot.kde() or df['a'].plot.density()
+
+mcdon['Adj. Close'].plot()
+
+
+
          
                                                                
                                                                
