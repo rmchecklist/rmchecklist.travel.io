@@ -474,6 +474,17 @@ Kernal density estimation ==> df['a'].plot.kde() or df['a'].plot.density()
 mcdon['Adj. Close'].plot()
 
 
+mcdon['Adj. Close'].plot(xlim=['2007-10-1', '2009-01-01'])
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+fig,ax = plt.subplots()
+ax.plot_date(idx, stock, '-')
+fig.autofmt_xdate()
+
 
          
                                                                
