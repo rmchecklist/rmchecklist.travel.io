@@ -474,6 +474,9 @@ Kernal density estimation ==> df['a'].plot.kde() or df['a'].plot.density()
 mcdon['Adj. Close'].plot()
 
 
+
+
+
 mcdon['Adj. Close'].plot(xlim=['2007-10-1', '2009-01-01'])
 
 
@@ -566,9 +569,26 @@ max volume traded:
 
 df_ford['Volume'].max()
 
+Let's practice plotting out some MA (Moving Averages). Plot out the MA50 and MA200 for GM. **
+
+# Code here
+df_gm['MA50'] = df_gm['Open'].rolling(50).mean()
+df_gm['MA200'] = df_gm['Open'].rolling(200).mean()
+
+df_gm[['Open', 'MA50', 'MA200']].plot(figsize=(16,8))
+
+
+from pandas.plotting import scatter_matrix
 
 
 
+
+
+-------------------------------------------------------
+
+Daily percent change ==> 𝑟𝑡=(𝑝𝑡/𝑝𝑡−1)−1
+	It means (current day close value/ previous  day close value) -1 
+	previous day close value can identified by shift(1)
 
 
  
