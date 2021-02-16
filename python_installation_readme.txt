@@ -486,6 +486,92 @@ ax.plot_date(idx, stock, '-')
 fig.autofmt_xdate()
 
 
+Datetime index:
+================
+
+from datetime import datetime
+
+my_date = datetime(year, month, day, hour, minute, sec)
+
+read year, month, day and other date time related information by their name
+
+my_date.year ...etc
+
+Create Datetime index ==> dt_ind = pd.DatetimeIndex(datetime list object)
+
+Create data frame usign same date time index
+
+data = np.random.randn(2,2)
+
+cols = ['a','b']
+
+df = pd.DataFrame(data, dt_ind, cols )
+
+	         a	b
+2015-01-02	-1.914149	1.235571
+2016-01-01	0.929838 	-0.562650
+
+
+df.index.argmax() ==> index max position
+
+df.index.max() ==> return actual value of the index max
+
+
+df.index.argmin() ==> return min index position
+df.index.min() ==> return min index position value
+
+
+
+Time Resampling:
+================
+
+
+df = pd.read_csv('xyz.csv', index_col = 'Date', parse_dates=True) ==> If this column is Object string then we need manually converts them to datetime object.
+
+if index_col is set then parse_dates will converts the index column to datatime object.
+
+Conver the object to datatime ==> df['col_name'] = pd.to_datetime(df[col_name'])
+
+or 
+
+df['Date'] = df['Date'].apply(pd.to_datetime)
+
+df.index ==> return the index column
+
+
+Read stock data from web:
+=========================
+
+import pandas_datareader
+import datetime
+import pandas_datareader.data as web
+
+start  =datetime.datetime(2012,1,1)
+end  =datetime.datetime(2017,1,1)
+
+tesla = web.DataReader('TSLA', 'yahoo', start, end)
+
+tesla.head()
+
+
+** Recreate this linear plot of all the stocks' Open price ! Hint: For the legend, use label parameter and plt.legend()**
+
+df_tesla['Open'].plot(label='Tesla', figsize=(12,8), title= 'Open Price')
+df_ford['Open'].plot(label='Ford')
+df_gm['Open'].plot(label='GM')
+plt.legend();
+
+
+max volume traded:
+
+df_ford['Volume'].max()
+
+
+
+
+
+
+ 
          
                                                                
                                                                
