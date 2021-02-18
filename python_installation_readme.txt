@@ -591,7 +591,12 @@ Daily percent change ==> 𝑟𝑡=(𝑝𝑡/𝑝𝑡−1)−1
 	previous day close value can identified by shift(1)
 
 
+ Statsmodels:
+ ===========
  
+ ETS model(Error-Trends-Seasonality)
+ 
+ EWMA - Exponentially Weighted Moving Averages
          
                                                                
                                                                
