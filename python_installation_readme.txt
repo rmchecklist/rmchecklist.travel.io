@@ -599,7 +599,24 @@ Daily percent change ==> 𝑟𝑡=(𝑝𝑡/𝑝𝑡−1)−1
  EWMA - Exponentially Weighted Moving Averages
          
                                                                
-                                                               
+3 Types of Funds:
+
+ETF --> Exchange Traded Funds
+Mutual Funds
+Hedge Funds
+
+CAPM -> Capital Asset Pricing Model
+
+
+Cumulative return = Current close price/first day of close price
+
+Daily Return = current value - previous value ==>  This can be acheived by using numpy.pct_change(1)
+
+
+Adj close price is adjusted based upon the stocks splits
+
+
+
                   
                   
                                 
