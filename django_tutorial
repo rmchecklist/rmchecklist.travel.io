@@ -1,0 +1,6 @@
+Django - Python web framework
+
+How it works?
+                               -->Template                                  
+Http Reqquest --> URLS.py --> View.py --> HTTP response
+                              <----> Models.py
