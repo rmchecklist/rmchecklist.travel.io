@@ -4,3 +4,37 @@ How it works?
                                -->Template                                  
 Http Reqquest --> URLS.py --> View.py --> HTTP response
                               <----> Models.py
+                              
+                              
+URL.py --> All http request will direct to url.py and it is redirected to respective view.py
+
+view --> Request handler function, receioved http request and returns http response, 
+            it access the data needed to satisfy requests via models and delegate the formatting of the response to templates.
+            
+Model --> Model are python objects that define the structure of application data.
+            
+Templates --> it defines the structure or layout of the file.
+
+Django refers Model View Template(MVT) which is similar to MVC architecture
+
+Sending the request to the right view
+--------------------------------------
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('book/<int:id>/', views.book_detail, name='book_detail'),
+    path('catalog/', include('catalog.urls')),
+    re_path(r'^([0-9]+)/$', views.best),
+]
+
+urlpatterns object is list of path/re_path functions
+
+path(part of the url, function, will be called when the pattern is matched)
+
+e,g views.book_detail --> Book detail can be found in views.py(inside file named views.py)
+
+
+Handling the request(views.py)
+------------------------------
+
+
+view.py
