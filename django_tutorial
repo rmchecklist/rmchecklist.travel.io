@@ -105,9 +105,102 @@ class Team(models.Model):
     5. Start project ==> django-admin startproject mytestsite
     6. Run the web server ==> python manage.py runserver
     7. Check the server status my navigating to http://127.0.0.1:8000/
-            
+    
+    
+    Part-2 :: Creating a skeleton website:
+    ======================================
+    1. Create new project ==> django-admin startproject locallibrary
+    2. file directory
+          locallibrary/
+              manage.py
+              locallibrary/
+                  __init__.py
+                  settings.py
+                  urls.py
+                  wsgi.py
+                  asgi.py
+                  
+                  1. __init__.py --> empty file that instructs Python to treat this dir as a Python package
+                  2. settings.py --> contains all website settings, including registering any applications we create, the location of the our static files, database configuration details etc.
+                  3. urls.py --> defines the sites URL-to-view mappings, maintain the all url mapping code
+                  4. wsgi.py --> used to help django application communicate with the webserver( treat this is a boilerpalte)
+                  5. asgi.py --> standard for python asyn web apps and serves to communicate with each other
+                manage.py --> script is used to create applications, work with database and start the development web server.
+                
+   Create the catalog application:
+    1. python manage.py startapp catalog
+    
+            locallibrary/
+                manage.py
+                locallibrary/
+                catalog/
+                    admin.py --> admin site configuration
+                    apps.py --> application registration
+                    models.py --> models
+                    tests.py --> tests
+                    views.py --> views
+                    __init__.py --> empty file, will recognize the folder as a python package.
+                    migrations/ --> used to store "migrations" -- files that allow you to automatically update your database as you modify you models
+        
+        Registering the catalog application:
+        ------------------------------------
+        
+        Register new app --> django_projects/locallibrary/locallibrary/settings.py
+        
+        add new app into INSTALLED_APPS list ==> catalog.apps.CatalogConfig (This object was created for is in /catalog/apps.py)
+        
+        
+        Specifying the database
+        ------------------------
+       setting.py ==> 
+              1. since we are using default db, we are not making any changes in DATABASE list, this will be used for other project setting
+              2. Changing timezone settings.py ==> TIME_ZONE
+              3. SECRET_KEY--> This is the secret key that is used as part of Django website security strategy. 
+              4. DEBUG
+              
+        Hooking up the URL mapper
+        -------------------------
+        
+        project_folder --> urls.py 
+              --> URL mappings are managed through urlpatterns variable, which is a python list of path() functions
+              
+        Add new list item to urlpatterns(urls.py)
+              from django.urls import include
+              
+             urlpatterns += [
+                  path('catalog/', include('catalog.urls')),
+                  ]
+       
+       
+       path('', RedirectView.as_view(url='catalog/', permanent=True)),  ==> This directly rediret the url to when user types http:/localhost:8000/catalog when user types 127.0.0.1:8000
+        
+       django does not serve static files like CSS, Javascript and images by default
+          
+          
+      Running database migrations:
+      ----------------------------
       
+    When we create the website, Django automatically added a number of models for use by the admin section of the site.
+    
+    Run the following commands to define tables for those models in the database.
+    
+    python manage.py makemigrations
+    python manage.py migrate
+    
+   These commands should be run everytime when your models change(addtion/removal)
    
-   
+  
+  Running the website
+  --------------------
+  
+  python migrate.py runserver
+  
+  
+  You should re-run migrations and re-test the site whenever you make significant changes. 
+  
+  
+  Part 3: Using Models
+  ======================
+  
   
    
