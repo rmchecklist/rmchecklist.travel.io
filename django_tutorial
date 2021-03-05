@@ -17,8 +17,8 @@ Templates --> it defines the structure or layout of the file.
 
 Django refers Model View Template(MVT) which is similar to MVC architecture
 
-Sending the request to the right view
---------------------------------------
+Sending the request to the right view(urls.py)
+----------------------------------------------
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('book/<int:id>/', views.book_detail, name='book_detail'),
@@ -38,3 +38,76 @@ Handling the request(views.py)
 
 
 view.py
+
+from django.http import HttpResponse
+
+def index(request):
+return HttpRespinse("Hello world")
+
+defining a data model(models.py)
+--------------------------------
+
+
+from django.db import models
+
+class Team(models.Model):
+  team_name = models.CharField(max_length=40)
+  
+  TTEAM_LEVELS = (
+        ('U09', 'Under 09s'),
+        ('U10', 'Under 10s'),
+        ('U11', 'Under 11s'),
+        ...  #list other team levels
+    )
+    
+    team_level = models.CharField(max_length=3, choices=TEAM_LEVELS, default='U11')
+    
+    
+    Quering data (views.py)
+    ------------------------
+    
+    from django.shortcuts import render
+    from .models import Team
+    
+    def index(request):
+      list_teams = Team.Objects.filter(team_level_exact = 'U09')
+      context = {'youngest_teams': list_teams}
+      return render(request, '/best/index.html', context)
+      
+    Rendering data(HTML templates)
+    ------------------------------
+    
+    
+   What else can do?
+   
+   Forms
+   User authentication and permissions
+   Caching
+   Admin site
+   Serializing data
+   
+   
+   Install python windows
+   
+   python version ==> py -3 -V
+   
+   list the installed pip3 ==> pip3 list
+   
+   1. install virtual env ==> pip install virtualenvwrapper-win
+   
+   2. Creating a vitual environment ==> mkvirtualenv project_name
+            1. deactivate - Exit out of the current python virtual environment
+            2. workon - List avaialble virtual environment
+            3. workon name_of_environment - Activate teh spcified python vitual environemnt
+            4. rmvirtualenv name_of_env - Remove the speificed the env
+    3. Installing Django ==> pip install django~=3.1
+    4. Django version ==> python -m django --version or py -m django --version
+    5. Start project ==> django-admin startproject mytestsite
+    6. Run the web server ==> python manage.py runserver
+    7. Check the server status my navigating to http://127.0.0.1:8000/
+            
+      
+   
+   
+  
+   
