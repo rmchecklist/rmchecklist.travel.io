@@ -202,5 +202,6 @@ class Team(models.Model):
   Part 3: Using Models
   ======================
   
+  access and manage data through python objects referred to as models
   
    
