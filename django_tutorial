@@ -1,3 +1,5 @@
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
+
 Django - Python web framework
 
 How it works?
@@ -204,4 +206,52 @@ class Team(models.Model):
   
   access and manage data through python objects referred to as models
   
-   
+  
+  
+  Model definitions:
+  --------------------
+  
+  1. import models from django.db
+        from django.db import models
+        
+  2. create a model class extends models.Model
+        class MyModelName(models.Model):
+        
+  3. Define fields
+        my_field_name = models.CharField(max_length=20, help_text="Enter the filed documentation")
+  
+      Field argument:
+          help_text - Provide text label for HTML forms
+          verbose_name - Human readable name for the field used in field labels
+          default = default value for the field
+          null = If true, Django store blank value as null, default value set to False
+          blank - If true, field is allowed to be blank in your forms, default is false. This oftern used with null=True
+          choices - group of choices for this field
+          primary_key - If true, set the current field as the primary key for the model
+          
+        Common field types:
+        
+          1. CharField
+          2. TextField
+          3. IntergerField
+          4. DateField/DateTimeField
+          5. EmailField
+          6. FileField/ImageField
+          7. AutoField(special type of InterField that automatically increments)
+          8. ForeignKey(one to many relationship)
+          9. ManyToManyField
+          
+          Metadata(control the default ordering)
+          
+          class Meta:
+              ordering = ['my_field_name']
+              
+         Methods
+         
+         def __str__(self): --> Human readable sring for each object
+         
+         
+         def get_absolute_url(self): --> returns a URL for displaying individual model records on the website
+                return reverse('model-detail-view', args=[str[self.id]])
+        
+        
