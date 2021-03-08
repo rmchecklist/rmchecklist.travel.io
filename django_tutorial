@@ -343,7 +343,10 @@ class BookAdmin(admin.ModelAdmin):
     inlines = [BooksInstanceInline]
  
  
-        
+Creating our home page:
+=======================
+
+
  
  
   
