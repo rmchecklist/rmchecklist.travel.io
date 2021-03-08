@@ -255,3 +255,105 @@ class Team(models.Model):
                 return reverse('model-detail-view', args=[str[self.id]])
         
         
+  Creatiing and modifying records:
+  
+  record = MyModelName(my_field_name="instace#1')
+  
+  record.save()
+  
+  access and modifying the records by using record object.
+  
+  Searching for records:
+  ----------------------
+  
+  all_books = Book.objects.all()
+  
+  Filter:
+  ------
+  
+  wild_books = Book.objects.filter(tile_contains='wild')
+ number_wild_books = wild_books.coutn() 
+ 
+ contains = text contains
+ icontains = text contains and case insensitive
+ iexact = case insensitive and exact
+ exact = case sensitive exact match
+ in
+ gt
+ startwith
+ 
+ 
+ e.g.
+ 
+ # Will match on: Fiction, Science fiction, non-fiction etc.
+books_containing_genre = Book.objects.filter(genre__name__icontains='fiction')
+
+Re-run the database migrations:
+
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+
+Create an admin user:
+
+python manage.py createsuperuser
+ 
+ 
+ Registering models:
+ -------------------
+ 
+ open admin.py in the catalog application(locallib/catalog/admin.py)
+ 
+ 
+ Register ModelAdmin class - Customize the admin page
+ -----------------------------------------------------
+ 
+ 1. Register the admin class ==> admin.site.register(Author, AuthorAdmin) or @admin.register(Book) [decorator]
+ 2. update the display view ==> list_display = ('title', 'author', 'display_genre')
+ 3. Filter the values ==> list_filter = ('status', 'due_back')
+ 
+ 
+ Organize detail view layout:
+ =============================
+ 
+ fields = ['first_name', 'last_name', ('date_of_birth', 'date_of_death')] -- Tuple will be displayed on the same row
+ 
+ Sectioning the detail view:
+ ===========================
+ 
+ fieldsets = (
+        (None, {
+            'fields': ('book', 'imprint', 'id')
+        }),
+        ('Availability', {
+            'fields': ('status', 'due_back')
+        }),
+    )
+ 
+ 
+ Inline editing of associated records
+ ====================================
+ 
+ class BooksInstanceInline(admin.TabularInline):
+    model = BookInstance
+
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'display_genre')
+    inlines = [BooksInstanceInline]
+ 
+ 
+        
+ 
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
