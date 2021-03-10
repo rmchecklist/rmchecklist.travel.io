@@ -375,7 +375,41 @@ urlpatterns = [
  <li><a href="{% url 'index' %}">Home</a></li> this tag accepts name of the path() function from urls.py
   
  
+ Generic list and detail views:
+ ==============================
+ 
+ 
+ 
+ URL mapping: 
+ 
+ urlpatterns = [
+  path('', views.index, name='index'),
+  path('books/', views.BookListView.as_view(), name='books'),
   
+ ]
+  
+  
+ View[Class based]
+ -----------------
+ 
+ path ==> /application_name/the_model_name_list.html(catalog/book_list.html)
+ 
+ Override methods in class-based views
+ -------------------------------------
+ 
+ 
+ Creating the List View Template:
+ ================================
+ 
+ path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail')
+ 
+ instread we can use regular expression 
+ 
+ re_path('^book/(?P<pk>\d+)$', views.BookDetailView.as_view(), name='book-detail'), 
+ 
+ 
+ 
+ 
   
   
   
