@@ -346,8 +346,34 @@ class BookAdmin(admin.ModelAdmin):
 Creating our home page:
 =======================
 
+URL mapping==> 
+    urlpatterns += [
+    path('catalog/', include('catalog.urls')),
+] 
+===> This directs to catalog app urls.py
 
+catalog/urls.py
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+
+=>1st arg --> URL pattern
+  views.index ==> index() is implemented in views.py
+  name = 'index'--> unique view name used for reverse the mapper
+   
+ Template:
  
+ Template variable ==> {{context variable}}
+ 
+ template tag ==> {% %}
+ 
+ loading static file or image  ==> {%load static %} and them use {%static path%}
+ 
+ Linking to URLs
+ 
+ <li><a href="{% url 'index' %}">Home</a></li> this tag accepts name of the path() function from urls.py
+  
  
   
   
