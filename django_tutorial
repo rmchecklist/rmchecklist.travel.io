@@ -410,9 +410,35 @@ urlpatterns = [
  
  
  
+ 
+ ***************************************************************************
+ 
+ catalog/books/ - create view for this URL
+ 
+ urls.py
+ 
+view  implemented as class:
+----------------------------
+ Class level url mapping
+        path('books/', views.BookListView.as_view(), name='books'),
+ 
   
+  from django.views import generic
   
+  Create view class:
+  ------------------
+  class BookListView(generic.ListView):
+    model = Book
+    
   
+  create html under catalog/templates/catalog/book_list.html from here we can access the object_list or book_list()
+  
+  control query_set by overriding the below method
+  
+  def get_queryset(self):
+    return Book.objects.filter(title__icontains ='war')[:5]
+
+also override context_data method to pass additional args 
   
   
   
