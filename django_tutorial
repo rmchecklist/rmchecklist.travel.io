@@ -475,3 +475,8 @@ MIDDLEWARE = [
   user.last_name = 'lname'
   user.save()
   
+
+permission:
+-----------
+
+
